@@ -1,6 +1,6 @@
 CC=gcc
 OPT=-Wall -g -std=c99
-SRC = $(wildcard *.c)
+SRC = $(wildcard src/*.c)
 OBJS = $(SRC:.c=.o)
 EXEC=sudo
 all : $(EXEC)
@@ -10,5 +10,5 @@ $(EXEC): $(OBJS)
 %.o : %.c
 	$(CC) $(OPT) -o $@ -c $<
 clean:
-	rm -rf *.o *.stackdump
+	rm -rf sudo src/*.o *.stackdump
 
